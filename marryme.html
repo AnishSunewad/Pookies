@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Marry Me?</title>
+    <style>
+        body {
+            background-color: pink;
+            color: red;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            margin-top: 20%;
+        }
+        .button {
+            padding: 15px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            margin: 10px;
+        }
+        .yes {
+            background-color: red;
+            color: white;
+        }
+        .no {
+            background-color: white;
+            color: red;
+            border: 2px solid red;
+        }
+        .heart, .heart-burst {
+            display: none;
+            width: 300px;
+            height: 300px;
+            background-size: contain;
+            margin: 20px auto;
+        }
+        .heart-burst {
+            background: url('https://media.giphy.com/media/12OhyTAdYPPy8M/giphy.gif') no-repeat center center;
+            background-size: cover;
+        }
+        .animate-heart {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you marry me?</h1>
+    <button class="button yes" onclick="showLove()">Yes baby 😊</button>
+    <button class="button no" onclick="showHeartbreak()">No sorry 😢</button>
+    <div class="heart-burst" id="heartBurst"></div>
+    <div class="heart" id="heart"></div>
+    <script>
+        function showLove() {
+            document.getElementById('heartBurst').classList.add('animate-heart');
+            setTimeout(function() {
+                location.href='thankyou.html';
+            }, 3000);
+        }
+
+        function showHeartbreak() {
+            document.getElementById('heart').classList.add('animate-heart-broken');
+            setTimeout(function() {
+                location.href='brokenheart.html';
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
